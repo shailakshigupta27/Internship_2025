@@ -19,7 +19,7 @@ class SETTING(Page):
        self.driver.find_element(*self.change_pwd_page)
 
    def add_test_password(self):
-       self.driver.find_element(self.new_password, *self.new_pwd)
+       self.input_text(self.new_password, *self.new_pwd)
 
    def change_password_btn(self):
        self.driver.find_element(*self.change_pwd_button)

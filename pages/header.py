@@ -8,7 +8,7 @@ class Header(Page):
     SEARCH_INPUT = (By.ID, 'search')
     CART_ICON = (By.CSS_SELECTOR, '[aria-label="cart 0 items"]')
     Account_Dropdown = (By.CSS_SELECTOR, '#account-sign-in')
-    SETTING_BTN = (By.CSS_SELECTOR, "[class*='menu-button-block w-inline-block w--current']")
+    SETTING_BTN = (By.CSS_SELECTOR, "[class*='lucide lucide-settings']")
 
 
     def __init__(self, driver):
@@ -30,5 +30,5 @@ class Header(Page):
         sleep(3)
 
     def settings_option(self):
-        self.driver.find_element(*self.SETTING_BTN)
+        self.driver.find_element(*self.SETTING_BTN).click()
         sleep(10)
