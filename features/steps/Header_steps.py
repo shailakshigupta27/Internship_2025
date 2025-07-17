@@ -22,3 +22,6 @@ def account_dropdown(context):
     #sleep(3)
     context.app.header.account_dropdown()
 
+@when('Click on the settings option')
+def settings_option(context):
+    context.app.header.settings_option()

@@ -9,3 +9,14 @@ def create_account(context):
 
     #context.driver.find_element(By.CSS_SELECTOR,'[data-test="accountNav-signIn"]').click()
     #sleep(3)
+
+@when('Click sign in')
+def sign_in(context):
+    context.app.signin_side_navigation_page.sign_in()
+
+
+@when('Log in to the page')
+def login(context):
+    context.app.login_page.input_username()
+    context.app.login_page.input_password()
+    context.app.login_page.click_continue()

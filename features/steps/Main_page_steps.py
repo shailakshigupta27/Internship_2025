@@ -15,6 +15,11 @@ def open_target(context):
     context.driver.get('https://www.target.com/circle')
 
 
+@given('Open main reelly page')
+def open_main_reelly(context):
+    context.driver.get('https://soft.reelly.io')
+
+
 @when ('Click on Add to Cart')
 def add_cart(context):
     context.driver.find_element(By.CSS_SELECTOR, "[data-focusid*='82242697_product_card'] [id*='addToCartButtonOrTextId']").click()
