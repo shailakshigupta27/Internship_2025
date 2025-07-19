@@ -9,6 +9,7 @@ class Header(Page):
     CART_ICON = (By.CSS_SELECTOR, '[aria-label="cart 0 items"]')
     Account_Dropdown = (By.CSS_SELECTOR, '#account-sign-in')
     SETTING_BTN = (By.CSS_SELECTOR, "[class*='lucide lucide-settings']")
+    # SETTING_BTN = (By.CSS_SELECTOR, "[href*='settings'] [class*='icon-menu w-embed']")
 
 
     def __init__(self, driver):

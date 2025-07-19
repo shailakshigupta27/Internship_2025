@@ -13,14 +13,16 @@ class LoginPage(Page):
    Password = 'Shailu@27'
 
    def input_username(self):
+       sleep(3)
        self.input_text(self.username, *self.email)
 
    def input_password(self):
+       sleep(3)
        self.input_text(self.Password, *self.password)
 
    def click_continue(self):
+       sleep(3)
        self.click(*self.continue_button)
-       sleep(10)
 
 
 
