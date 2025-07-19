@@ -1,35 +1,35 @@
-# from selenium import webdriver
-# from selenium.webdriver.chrome.service import Service
-# from selenium.webdriver.support.wait import WebDriverWait
-# from webdriver_manager.chrome import ChromeDriverManager
-# from selenium.webdriver.chrome.options import Options
-# from app.application import Application
-
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
-from webdriver_manager.firefox import GeckoDriverManager  # Use GeckoDriverManager for Firefox
-from selenium.webdriver.firefox.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 from app.application import Application
+
+# from selenium import webdriver
+# from selenium.webdriver.firefox.service import Service
+# from selenium.webdriver.support.wait import WebDriverWait
+# from webdriver_manager.firefox import GeckoDriverManager  # Use GeckoDriverManager for Firefox
+# from selenium.webdriver.firefox.options import Options
+# from app.application import Application
 def browser_init(context, scenario_name):
     """
     :param context: Behave context
     """
-    #driver_path = ChromeDriverManager().install()
-    driver_path = GeckoDriverManager().install()
-    service = Service(driver_path)
-    #context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    # driver_path = GeckoDriverManager().install()
+    # service = Service(driver_path)
+    # context.driver = webdriver.Chrome(service=service)
 
     ### SAFARI ###
-    context.driver = webdriver.Firefox()
+    # context.driver = webdriver.Firefox()
     #context.driver = webdriver.Safari()
 
     ### HEADLESS MODE ####
-    # options = webdriver.ChromeOptions()
-    # options.add_argument('headless')
-    # context.driver = webdriver.Chrome(
-    #     options=options
-    # )
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    context.driver = webdriver.Chrome(
+        options=options
+    )
 
     #BROWSERSTACK ###
     #Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
