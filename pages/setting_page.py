@@ -6,6 +6,7 @@ from features.steps.Cart_page_steps import message
 
 class SETTING(Page):
    change_pwds =  (By.CSS_SELECTOR, "[href*='/set-new-password']")
+   change_pwd_mobile_view = (By.CSS_SELECTOR,"[href*='/set-new-password']")
    change_pwd_page = (By.CSS_SELECTOR, "[class*='change-password-text']")
    new_pwd = (By.CSS_SELECTOR, "[name*='Enter-new-password']")
    change_pwd_button = (By.CSS_SELECTOR, "[class*='submit-button-2 w-button']")
@@ -14,6 +15,10 @@ class SETTING(Page):
 
    def changes_pwd(self):
        self.driver.find_element(*self.change_pwds).click()
+
+   def changes_pwd_mobile_view(self):
+       self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+       self.driver.find_element(*self.change_pwd_mobile_view).click()
 
    def verify_right_page(self):
        self.driver.find_element(*self.change_pwd_page)

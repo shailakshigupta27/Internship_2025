@@ -6,8 +6,10 @@ Feature: Setting page functionality
     Given Open main reelly page
     #When Click sign in
     When Log in to the page
-    And Click on the settings option
-    And Click on the Change password option
+#    And Click on the settings option
+    And Click on setting option for mobile view
+#    And Click on the Change password option
+    And Click on the Change password option for mobile view
     And Verify the right page opens
     And Add some test password to the input fields
     Then Verify the “Change password” button is available

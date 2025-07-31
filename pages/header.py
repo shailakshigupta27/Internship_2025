@@ -10,7 +10,7 @@ class Header(Page):
     Account_Dropdown = (By.CSS_SELECTOR, '#account-sign-in')
     SETTING_BTN = (By.CSS_SELECTOR, "[class*='lucide lucide-settings']")
     # SETTING_BTN = (By.CSS_SELECTOR, "[href*='settings'] [class*='icon-menu w-embed']")
-
+    SETTING_BTN_MOBILE = (By.CSS_SELECTOR, "[class*='new-market-menu-button _1 w-inline-block']")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -32,4 +32,8 @@ class Header(Page):
 
     def settings_option(self):
         self.driver.find_element(*self.SETTING_BTN).click()
+        sleep(10)
+
+    def settings_option_mobile(self):
+        self.driver.find_element(*self.SETTING_BTN_MOBILE).click()
         sleep(10)

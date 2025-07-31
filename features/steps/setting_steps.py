@@ -7,6 +7,11 @@ from time import sleep
 def changes_pwd(context):
     context.app.setting_page.changes_pwd()
 
+@when('Click on the Change password option for mobile view')
+def changes_pwd_mobile_view(context):
+    context.app.setting_page.changes_pwd_mobile_view()
+    sleep(10)
+
 
 @when('Verify the right page opens')
 def verify_right_page(context):

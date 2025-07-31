@@ -25,3 +25,8 @@ def account_dropdown(context):
 @when('Click on the settings option')
 def settings_option(context):
     context.app.header.settings_option()
+
+
+@when('Click on setting option for mobile view')
+def settings_option_mobile(context):
+    context.app.header.settings_option_mobile()
